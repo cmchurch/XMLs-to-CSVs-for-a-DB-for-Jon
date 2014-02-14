@@ -88,7 +88,7 @@ investigators = open(path+"investigators.csv","w")
 award.write(aHeaders)
 investigators.write(iHeaders)
 
-for root,dirs,files in os.walk(path): #walk through the filepath and look for xml files, storing them in xmls array
+for root,dirs,files in os.walk(path):
     for file in files:
         if file.endswith('.xml'):
             with open(path+file, 'rt') as f:
@@ -97,12 +97,5 @@ for root,dirs,files in os.walk(path): #walk through the filepath and look for xm
                 getInvestigators(iTags)
 award.close()
 investigators.close()
-
-# <codecell>
-
-t = tree.find("./Award/AwardAmount").text
-int(t)
-
-# <codecell>
 
 
