@@ -19,7 +19,7 @@ def getAward(l):
         else:
             award.write('"'+str(value)+'"')
         if x < (len(l)-1):
-            award.write(", ")
+            award.write(",")
         else:
             award.write("\n")
 
@@ -28,11 +28,11 @@ def getAward(l):
 def getInvestigators(l):
     rootpath="./Award/Investigator"
     for i in tree.findall(rootpath):
-        investigators.write(str(tree.find("./Award/AwardID").text)+', ')
+        investigators.write(str(tree.find("./Award/AwardID").text)+',')
         for x,tag in enumerate(l):
             investigators.write('"'+str(i.find(tag).text)+'"')
             if x < (len(l)-1):
-                investigators.write(", ")
+                investigators.write(",")
             else:
                 investigators.write("\n")
 
